@@ -17,4 +17,6 @@ df.set_index("alpha", inplace=True)
 
 print(df)
 print()
+print(df.loc[["a", "c"]])
+print()
 print(df.loc[["a", "c"], ["c1", "c3"]])

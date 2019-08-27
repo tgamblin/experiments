@@ -15,25 +15,11 @@ df = pd.DataFrame(
 )
 df.set_index("alpha", inplace=True)
 
-
+print("INDEX: ", df.index.names)
 print(df)
 print()
 
-print(df.loc[["a", "c"]])
-print()
-
-print(df.loc[["a", "c"], df.columns])
-print()
-
-print(df.loc[["a", "c"], ["c1", "c3"]])
-print()
-
-print(df.loc["a", "c1"])
-print()
-
-
-rows = ["c", "e", "g"]
-cols = ["c2", "c4"]
-df.loc["a", cols] = np.sum(df.loc[rows, cols])
-print(df)
-print()
+new_df = df.copy()
+print("INDEX: ", new_df.index.names)
+print(new_df)
+assert new_df.index.names == ["alpha"]
